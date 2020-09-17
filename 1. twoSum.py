@@ -1,7 +1,14 @@
 import unittest
 
+from typing import List
+
 class Solution:
-    def twoSum(self, nums: 'List[int]', target: 'int') -> 'List[int]':
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        Given list of integers and a target, return list of indices of 
+        inputs that add to target. It is guaranteed that a single pair of 
+        correct inputs exists.
+        """
         already_seen = {}
         for i in range(len(nums)):
             if target - nums[i] in already_seen:

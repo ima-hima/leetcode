@@ -4,6 +4,7 @@ import unittest
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        """Find the longest non-repeating substring in s. Return the length."""
         if len(s) == 0:
             return 0
         length = 1

@@ -2,7 +2,7 @@ import unittest
 
 class Solution:
     def findMedianSortedArrays(self, nums1, nums2):
-        """ Return median of two sorted arrays. """
+        """Return median of two sorted arrays."""
         median_position = (len(nums1) + len(nums2)) // 2
         is_even = len(nums1) + len(nums2) % 2 == 0
         idx_nums1 = 0

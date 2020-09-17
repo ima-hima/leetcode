@@ -4,6 +4,12 @@ from typing import List
 class Solution:
     # Note that there are several short circuits in various places, so code is difficult to parse.
     def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        """
+        Given and input string of concatenated words and a list of words, l, return a list of 
+        each index beginning at which all words in l appear the correct number of times with no 
+        intervening characters.
+        """
+        
         # check for actual inputs
         if len(words) == 0 or len(s) == 0:
             return []

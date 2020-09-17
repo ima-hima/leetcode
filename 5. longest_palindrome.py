@@ -1,14 +1,18 @@
 import unittest
 
+
 class Solution:
     
     def longestPalindrome(self, s: str) -> str:
+        """Return the longest palindrome in s."""
+
+        # Right now O(n^2), so needs to be improved.
         if len(s) == 0:
             return ''
         longest = s[0]
         max_length = 0
         for i in range(0, len(s)):
-            # Is there a way to do this without the prime? j starts at -1, so I dunno...
+            # Is there a way to do this without priming? j starts at -1, so I dunno...
             if self.isPalindrome(s[i:]):
                 if len(s[i:]) > max_length:
                     longest = s[i:]
@@ -25,7 +29,7 @@ class Solution:
 
         return longest
 
-    def isPalindrome(self, s) -> bool:
+    def isPalindrome(self, s: str) -> bool:
         for i in range(len(s) // 2 + 1):
             if s[-1-i] != s[i]:
                 return False
@@ -53,24 +57,21 @@ class TestLongestPalindrome(unittest.TestCase):
         soln = Solution()
         self.assertEqual(soln.longestPalindrome('abba'), 'abba')
 
-    # def test_is_not_palindrome_even(self):
-    #     soln = Solution()
-    #     self.assertFalse(soln.isPalindrome('abaa'))
+    def test_is_not_palindrome_even(self):
+        soln = Solution()
+        self.assertFalse(soln.isPalindrome('abaa'))
 
-    # def test_is_not_palindrome_odd(self):
-    #     soln = Solution()
-    #     self.assertFalse(soln.isPalindrome('abacb'))
+    def test_is_not_palindrome_odd(self):
+        soln = Solution()
+        self.assertFalse(soln.isPalindrome('abacb'))
 
-    # def test_is_palindrome_even(self):
-    #     soln = Solution()
-    #     self.assertTrue(soln.isPalindrome('abba'))
+    def test_is_palindrome_even(self):
+        soln = Solution()
+        self.assertTrue(soln.isPalindrome('abba'))
 
-    # def test_is_palindrome_odd(self):
-    #     soln = Solution()
-    #     self.assertTrue(soln.isPalindrome('ababa'))
-
-
-
+    def test_is_palindrome_odd(self):
+        soln = Solution()
+        self.assertTrue(soln.isPalindrome('ababa'))
 
 
 unittest.main()
